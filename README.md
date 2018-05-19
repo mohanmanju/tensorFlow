@@ -1,3 +1,4 @@
 # tensorFlow
 Basic programs to learn tensorflow
-<a href = "google.com"> google </a>
+
+#Xor : [link](https://mohanmanju.github.io/tensorflow/xor/index.html)<br />
