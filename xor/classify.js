@@ -9,7 +9,7 @@ class Classifier {
     //loading model
     async loadmodel() {
 
-        this.model = await tf.loadModel('../../model.json');
+        this.model = await tf.loadModel('model/model.json');
         
     }
 
