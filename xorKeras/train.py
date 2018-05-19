@@ -1,6 +1,8 @@
+from __future__ import print_function
 from keras.models import Sequential
 from keras.layers import Dense, Activation
 from keras.models import model_from_json
+
 import numpy as np
 import os
 
@@ -18,7 +20,7 @@ result = np.transpose(data)
 labels = result[0]^result[1]
 
 #trains for 5 iteration on the same data batch size is 1
-model.fit(data,labels,epochs=5)
+model.fit(data,labels,epochs=2)
 
 #test on 1000 samples
 dataTest = np.random.binomial(1,0.5,(1000,2))
@@ -31,6 +33,8 @@ score = model.evaluate(dataTest,labelsTest)
 #print the amount of loss on test data
 print(score)
 print("%s: %.2f%%" % (model.metrics_names[1], score[1]*100))
+re = model.predict(np.asarray([0,0]).reshape(1,2))
+print(re)
 
 model_json = model.to_json()
 with open("model.json", "w") as json_file:
